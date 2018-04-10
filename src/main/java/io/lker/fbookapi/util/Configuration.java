@@ -15,6 +15,7 @@ public class Configuration {
     public static String APP_ID;
     public static String APP_SECRET;
     public static String BEARER_TOKEN;
+    public static String PROXY_SERVER;
     public static final String CONFIG_FILE = "config.txt";
 
     public static void init(){
@@ -39,5 +40,7 @@ public class Configuration {
             APP_SECRET = props.getProperty("APP_SECRET");
         if(props.containsKey("BEARER_TOKEN"))
             BEARER_TOKEN = props.getProperty("BEARER_TOKEN");
+        if(props.containsKey("PROXY_SERVER"))
+            PROXY_SERVER = props.getProperty("PROXY_SERVER");
     }
 }
