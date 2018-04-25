@@ -3,6 +3,7 @@ package io.lker.fbookapi.models;
 public class FacebookUser {
     private String username;
     private String postUrl;
+    private FacebookPosts facebookPosts;
 
     public FacebookUser(){
         this.username = "goarmy";
@@ -27,5 +28,13 @@ public class FacebookUser {
 
     public void setPostUrl(String postUrl) {
         this.postUrl = postUrl;
+    }
+
+    public FacebookPosts getFacebookPosts() {
+        return facebookPosts;
+    }
+
+    public void setFacebookPosts(FacebookPosts facebookPosts) {
+        this.facebookPosts = facebookPosts;
     }
 }

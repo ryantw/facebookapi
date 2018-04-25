@@ -48,7 +48,6 @@ public class FacebookConnection {
             if (urlConnection != null)
                 urlConnection.disconnect();
         }
-
         return null;
     }
 }

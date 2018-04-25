@@ -6,21 +6,21 @@ import io.lker.fbookapi.models.FacebookUser;
 import io.lker.fbookapi.util.Configuration;
 import io.lker.fbookapi.util.FacebookConnection;
 
+
 public class Facebook {
 
     public static void main(String args[]){
         Configuration.init();
         Gson gson = new Gson();
+        FacebookUser facebookUser = new FacebookUser("goarmy");
 
-        System.out.println(Configuration.CONFIG_FILE);
-        System.out.println(Configuration.APP_ID);
-        System.out.println(Configuration.APP_SECRET);
-        System.out.println(Configuration.BEARER_TOKEN);
+        facebookUser.setFacebookPosts(gson.fromJson(
+                new FacebookConnection(facebookUser)
+                .RetrievePosts(), FacebookPosts.class
+        ));
 
-        FacebookPosts facebookPosts = gson.fromJson(
-                new FacebookConnection(
-                    new FacebookUser("goarmy")).RetrievePosts(), FacebookPosts.class);
-
-        facebookPosts.getData().forEach(post -> System.out.println(post));
+        facebookUser.getFacebookPosts()
+                .getData()
+                .forEach(post -> System.out.println(post));
     }
 }
