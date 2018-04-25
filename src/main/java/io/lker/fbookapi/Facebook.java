@@ -13,14 +13,19 @@ public class Facebook {
         Configuration.init();
         Gson gson = new Gson();
         FacebookUser facebookUser = new FacebookUser("goarmy");
+        FacebookConnection facebookConnection = new FacebookConnection(facebookUser);
 
         facebookUser.setFacebookPosts(gson.fromJson(
-                new FacebookConnection(facebookUser)
+                facebookConnection
                 .RetrievePosts(), FacebookPosts.class
         ));
 
+        facebookConnection.SetPostDetails(facebookUser);
+
         facebookUser.getFacebookPosts()
                 .getData()
-                .forEach(post -> System.out.println(post));
+                .forEach(post -> System.out.println(post.getFacebookPostDetails()));
+
+
     }
 }

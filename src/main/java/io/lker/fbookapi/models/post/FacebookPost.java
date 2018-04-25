@@ -7,6 +7,7 @@ public class FacebookPost {
     private String created_time;
     private String id;
     private String message;
+    private FacebookPostDetails facebookPostDetails;
 
     public FacebookPost(String story, String created_time, String id, String message) {
         this.story = story;
@@ -45,6 +46,14 @@ public class FacebookPost {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public FacebookPostDetails getFacebookPostDetails() {
+        return facebookPostDetails;
+    }
+
+    public void setFacebookPostDetails(FacebookPostDetails facebookPostDetails) {
+        this.facebookPostDetails = facebookPostDetails;
     }
 
     @Override
