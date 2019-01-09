@@ -57,6 +57,6 @@ public class FacebookPostDetails {
 
     @Override
     public String toString() {
-        return String.format("%s[%s]", this.getId(), this.getStatus_type());
+        return String.format("%s[%s] - %s", this.getId(), this.getStatus_type(), this.getMessage());
     }
 }
